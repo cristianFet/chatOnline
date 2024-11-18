@@ -14,8 +14,12 @@ const io = new Server(server, {
     /*origin: [
       "http://localhost:5173","https://v9lrtr9c-5173.use2.devtunnels.ms/"], */ //para las solicitudes
     origin: "*",
-    methods: ["GET", "POST"],
+    methods: ["GET","POST"],
   },
+});
+//Ruta para la raiz
+app.get("/", (req, res) => {
+  res.send("Welcome to my server!");
 });
 io.on("connection",(socket)=>{
   console.log(`Usuario actual : ${socket.id}`);
