@@ -7,7 +7,13 @@ const {Server} = require("socket.io")
 const socketIo = require('socket.io') //Agregada recientemente
 const PORT = process.env.PORT || 3001;
 
-app.use(cors())
+app.use(cors());
+//Ruta para la raiz
+app.get("/", (req, res) => {
+  res.send("Socket.IO Server is running!");
+});
+
+//Crear el servidor
 const server = http.createServer(app) //Crear el servidor
 const io = new Server(server, {
   cors: {
@@ -17,10 +23,8 @@ const io = new Server(server, {
     methods: ["GET","POST"],
   },
 });
-//Ruta para la raiz
-app.get("/", (req, res) => {
-  res.send("Welcome to my server!");
-});
+
+
 io.on("connection",(socket)=>{
   console.log(`Usuario actual : ${socket.id}`);
 
@@ -40,5 +44,5 @@ io.on("connection",(socket)=>{
 /*const host = "0.0.0.0";*/
 /*3001*/
 server.listen(/*3001,*/PORT,  /*host,*/ ()=>{
-  console.log("SERVER RUNNING")
+  console.log("SERVER RUNNING on port ${PORT}")
 })
