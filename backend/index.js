@@ -35,6 +35,6 @@ io.on("connection",(socket)=>{
 /*const host = "192.168.56.1";*/
 /*const host = "0.0.0.0";*/
 /*3001*/
-server.listen(/*PORT,*/3001, /*host,*/ ()=>{
+server.listen(/*PORT,*/3001, 5173, /*host,*/ ()=>{
   console.log("SERVER RUNNING")
 })
