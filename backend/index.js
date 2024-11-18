@@ -5,6 +5,7 @@ const http = require("http") //Creamos el objeto http
 const cors = require("cors")//habilitar las peticiones desde servidores diferentes, el front hace peticiones al backend
 const {Server} = require("socket.io")
 const socketIo = require('socket.io') //Agregada recientemente
+//const PORT = process.env.PORT || 3001;
 
 app.use(cors())
 const server = http.createServer(app) //Crear el servidor
@@ -33,6 +34,6 @@ io.on("connection",(socket)=>{
 })
 /*const host = "192.168.56.1";*/
 /*const host = "0.0.0.0";*/
-server.listen(3001, /*host,*/ ()=>{
+server.listen(/*PORT,*/3001, /*host,*/ ()=>{
   console.log("SERVER RUNNING")
 })
