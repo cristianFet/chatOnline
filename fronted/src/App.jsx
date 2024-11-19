@@ -5,7 +5,7 @@ import io from 'socket.io-client'
 import Chat from './Chat'
 import { Container, Button, Form, Card, Icon, /*Divider*/ } from "semantic-ui-react";
 
-const socket = io.connect("http://localhost:3001"); /* http://192.168.56.1:3001 http://localhost:3001*/
+const socket = io.connect("http://192.168.56.1:3001"); /* http://192.168.56.1:3001 http://localhost:3001*/
 function App() {
   const [username,setUsername] = useState("")
   const [room,setRoom] = useState("")
