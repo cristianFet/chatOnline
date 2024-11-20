@@ -15,7 +15,7 @@ app.use(cors());
 });*/
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../fronted/src/main.jsx")); // Cambia 'index.html' por tu archivo principal si tiene otro nombre
+  res.sendFile(path.join(__dirname, "index.js")); // Cambia 'index.html' por tu archivo principal si tiene otro nombre
 });
 
 //Crear el servidor
