@@ -9,10 +9,12 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 //Ruta para la raiz
+/*app.get("/", (req, res) => {
+  res.send("https://google.com");
+});*/
 app.get("/", (req, res) => {
-  res.send("Socket.IO Server is running!");
+  res.sendFile(join(__dirname, "index.html"));
 });
-
 //Crear el servidor
 const server = http.createServer(app) //Crear el servidor
 const io = new Server(server, {
