@@ -13,7 +13,7 @@ app.use(cors());
   res.send("https://google.com");
 });*/
 app.get("/", (req, res) => {
-  res.sendFile(join(__dirname, "index.html"));
+  res.sendFile(join(__dirname, "../frontend/index.html"));
 });
 //Crear el servidor
 const server = http.createServer(app) //Crear el servidor
