@@ -4,13 +4,18 @@ const app = express() //llamamos directamente al constructor
 const http = require("http") //Creamos el objeto http
 const cors = require("cors")//habilitar las peticiones desde servidores diferentes, el front hace peticiones al backend
 const {Server} = require("socket.io")
+const path = require("path")
 
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 //Ruta para la raiz
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
   res.send("https://google.com");
+});*/
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html")); // Cambia 'index.html' por tu archivo principal si tiene otro nombre
 });
 
 //Crear el servidor
